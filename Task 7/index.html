@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Работа со свойствами модуля Flexbox</title>
+    <link rel="stylesheet" type="text/css" href="style.css" />
+  </head>
+  <body>
+    <section id="glassmorphism-section">
+      <div class="glass-box">
+        <span></span>
+        <div class="content">
+          <h2>Заголовок</h2>
+          <p>
+            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Laborum,
+            saepe!
+          </p>
+          <a href="#">Подробнее</a>
+        </div>
+      </div>
+      <div class="glass-box">
+        <span></span>
+        <div class="content">
+          <h2>Заголовок</h2>
+          <p>
+            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Laborum,
+            saepe!
+          </p>
+          <a href="#">Подробнее</a>
+        </div>
+      </div>
+      <div class="glass-box">
+        <span></span>
+        <div class="content">
+          <h2>Заголовок</h2>
+          <p>
+            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Laborum,
+            saepe!
+          </p>
+          <a href="#">Подробнее</a>
+        </div>
+      </div>
+    </section>
+    <section id="advertisment-section">
+      <div
+        class="advertisment-box"
+        style="--hover-image: url('kaluga-museum-interior.jpg')"
+      >
+        <img src="kaluga-museum.jpg" alt="" />
+        <div>
+          <h3>Калужский музей космонавтики</h3>
+          <p>
+            Первый в мире и крупнейший в России музей космической тематики,
+            созданный при непосредственном участии С. П. Королёва и Ю. А.
+            Гагарина.
+          </p>
+        </div>
+      </div>
+      <div
+        class="advertisment-box"
+        style="
+          --hover-image: url('tula-museum-interior.jpg');
+          --text-color: white;
+        "
+      >
+        <img src="tula-museum.jpg" alt="" />
+        <div>
+          <h3>Музей станка</h3>
+          <p>
+            Первый в России мультимедийный интерактивный музей машин, который
+            посвящён становлению промышленности в России, в том числе на примере
+            Тульской области.
+          </p>
+        </div>
+      </div>
+      <div
+        class="advertisment-box"
+        style="
+          --hover-image: url('tula-museum2-interior.jpg');
+          --text-color: white;
+        "
+      >
+        <img src="tula-museum2.webp" alt="" />
+        <div>
+          <h3>Тульский государственный музей оружия</h3>
+          <p>
+            Cтарейший музей оружия в России, одна из главных
+            достопримечательностей Тулы.
+          </p>
+        </div>
+      </div>
+    </section>
+    <section id="social-buttons-section">
+      <div class="social-button">
+        <img src="facebook.svg" alt="facebook" />
+      </div>
+      <div class="social-button">
+        <img src="youtube.svg" alt="youtube" />
+      </div>
+      <div class="social-button">
+        <img src="linkedin.svg" alt="linkedin" />
+      </div>
+      <div class="social-button">
+        <img src="instagram.svg" alt="instagram" />
+      </div>
+      <div class="social-button">
+        <img src="telegram.svg" alt="telegram" />
+      </div>
+    </section>
+    <section id="authentication-section">
+      <div class="glass-form">
+        <div class="square" style="--i: 0"></div>
+        <div class="square" style="--i: 1"></div>
+        <div class="square" style="--i: 2"></div>
+        <div class="square" style="--i: 3"></div>
+        <div class="square" style="--i: 4"></div>
+        <div class="container">
+          <div class="form">
+            <h2>Логин</h2>
+            <form>
+              <div class="inputBox">
+                <input type="text" placeholder="Почта" />
+              </div>
+              <div class="inputBox">
+                <input type="password" placeholder="Пароль" />
+              </div>
+              <div class="inputBox">
+                <input type="submit" value="Войти" />
+              </div>
+              <p class="forget">Забыли пароль?<a href="#"> Перейти</a></p>
+              <p class="forget">
+                Ещё нет аккаунта?<a href="#"> Зарегистрироваться</a>
+              </p>
+            </form>
+          </div>
+        </div>
+      </div>
+      <div class="glass-form">
+        <div class="square" style="--i: 0"></div>
+        <div class="square" style="--i: 1"></div>
+        <div class="square" style="--i: 2"></div>
+        <div class="square" style="--i: 3"></div>
+        <div class="square" style="--i: 4"></div>
+        <div class="container">
+          <div class="form">
+            <h2>Регистрация</h2>
+            <form>
+              <div class="inputBox">
+                <input type="text" placeholder="Почта" />
+              </div>
+              <div class="inputBox">
+                <input type="password" placeholder="Пароль" />
+              </div>
+              <div class="inputBox">
+                <input type="submit" value="Зарегистрироваться" />
+              </div>
+              <p class="forget">Уже есть аккаунт?<a href="#"> Войти</a></p>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section id="shine-buttons-section">
+      <button class="shine-button">Hover me</button>
+    </section>
+    <section id="color-blur-cards-section">
+      <div class="color-blur-card">
+        <div class="circle">
+          <h2>01</h2>
+        </div>
+        <div class="content">
+          <p>
+            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Aliquam
+            obcaecati saepe incidunt alias maiores. Eos debitis veritatis eius
+            voluptas natus.
+          </p>
+          <a href="#">Read More</a>
+        </div>
+      </div>
+      <div class="color-blur-card">
+        <div class="circle">
+          <h2>02</h2>
+        </div>
+        <div class="content">
+          <p>
+            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Aliquam
+            obcaecati saepe incidunt alias maiores. Eos debitis veritatis eius
+            voluptas natus.
+          </p>
+          <a href="#">Read More</a>
+        </div>
+      </div>
+      <div class="color-blur-card">
+        <div class="circle">
+          <h2>03</h2>
+        </div>
+        <div class="content">
+          <p>
+            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Aliquam
+            obcaecati saepe incidunt alias maiores. Eos debitis veritatis eius
+            voluptas natus.
+          </p>
+          <a href="#">Read More</a>
+        </div>
+      </div>
+    </section>
+    <section id="goods-section">
+      <div class="good-card">
+        <div class="content">
+          <img src="headphones.png" alt="" />
+          <div>
+            <h6>Мониторные наушники</h6>
+            <span>38 990 ₽</span>
+            <button>Купить</button>
+          </div>
+        </div>
+      </div>
+      <div class="good-card">
+        <div class="content">
+          <img src="sony alpha.png" alt="" />
+          <div>
+            <h6>Sony Alpha II</h6>
+            <span>100 990 ₽</span>
+            <button>Купить</button>
+          </div>
+        </div>
+      </div>
+      <div class="good-card">
+        <div class="content">
+          <img src="macbook pro.png" alt="" />
+          <div>
+            <h6>MacBook Pro</h6>
+            <span>72 990 ₽</span>
+            <button>Купить</button>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section id="rays-cards-section">
+      <div class="rays-card">
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <div class="content">
+          <h2>01</h2>
+          <h3>Заголовок 1</h3>
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Corrupti,
+            dignissimos ut distinctio omnis inventore velit optio eaque
+            obcaecati qui aperiam.
+          </p>
+          <a href="#">Подробнее</a>
+        </div>
+      </div>
+      <div class="rays-card">
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <div class="content">
+          <h2>02</h2>
+          <h3>Заголовок 2</h3>
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Corrupti,
+            dignissimos ut distinctio omnis inventore velit optio eaque
+            obcaecati qui aperiam.
+          </p>
+          <a href="#">Подробнее</a>
+        </div>
+      </div>
+      <div class="rays-card">
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <div class="content">
+          <h2>03</h2>
+          <h3>Заголовок 3</h3>
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Corrupti,
+            dignissimos ut distinctio omnis inventore velit optio eaque
+            obcaecati qui aperiam.
+          </p>
+          <a href="#">Подробнее</a>
+        </div>
+      </div>
+    </section>
+    <section id="people-cards-section">
+      <div class="people-card">
+        <img src="people/Dennis_Ritchie.jpg" alt="ritchie" />
+        <h4>Деннис Ритчи</h4>
+        <span>Один из авторов языка C, Unix</span>
+        <div class="social-buttons">
+          <div class="social-button-inline">
+            <img src="facebook.svg" alt="facebook" />
+          </div>
+          <div class="social-button-inline">
+            <img src="twitter.svg" alt="twitter" />
+          </div>
+          <div class="social-button-inline">
+            <img src="linkedin.svg" alt="linkedin" />
+          </div>
+          <div class="social-button-inline">
+            <img src="instagram.svg" alt="instagram" />
+          </div>
+        </div>
+      </div>
+      <div class="people-card">
+        <img src="people/guido-van-rossum.avif" alt="guido-van-rossum" />
+        <h4>Гвидо ван Россум</h4>
+        <span>Автор языка Python</span>
+        <div class="social-buttons">
+          <div class="social-button-inline">
+            <img src="facebook.svg" alt="facebook" />
+          </div>
+          <div class="social-button-inline">
+            <img src="twitter.svg" alt="twitter" />
+          </div>
+          <div class="social-button-inline">
+            <img src="linkedin.svg" alt="linkedin" />
+          </div>
+          <div class="social-button-inline">
+            <img src="instagram.svg" alt="instagram" />
+          </div>
+        </div>
+      </div>
+      <div class="people-card">
+        <img src="people/buterin.jpg" alt="buterin" />
+        <h4>Виталик Бутерин</h4>
+        <span>Автор криптовалюты Ethereum</span>
+        <div class="social-buttons">
+          <div class="social-button-inline">
+            <img src="facebook.svg" alt="facebook" />
+          </div>
+          <div class="social-button-inline">
+            <img src="twitter.svg" alt="twitter" />
+          </div>
+          <div class="social-button-inline">
+            <img src="linkedin.svg" alt="linkedin" />
+          </div>
+          <div class="social-button-inline">
+            <img src="instagram.svg" alt="instagram" />
+          </div>
+        </div>
+      </div>
+      <div class="people-card">
+        <img src="people/tim-berners-lee.jpg" alt="tim-berners-lee" />
+        <h4>Тим Бернерс-Ли</h4>
+        <span>Создатель URI, URL, HTTP, HTML</span>
+        <div class="social-buttons">
+          <div class="social-button-inline">
+            <img src="facebook.svg" alt="facebook" />
+          </div>
+          <div class="social-button-inline">
+            <img src="twitter.svg" alt="twitter" />
+          </div>
+          <div class="social-button-inline">
+            <img src="linkedin.svg" alt="linkedin" />
+          </div>
+          <div class="social-button-inline">
+            <img src="instagram.svg" alt="instagram" />
+          </div>
+        </div>
+      </div>
+      <div class="people-card">
+        <img src="people/gosling.jpg" alt="gosling" />
+        <h4>Джеймс Гослинг</h4>
+        <span>Автор языка Java</span>
+        <div class="social-buttons">
+          <div class="social-button-inline">
+            <img src="facebook.svg" alt="facebook" />
+          </div>
+          <div class="social-button-inline">
+            <img src="twitter.svg" alt="twitter" />
+          </div>
+          <div class="social-button-inline">
+            <img src="linkedin.svg" alt="linkedin" />
+          </div>
+          <div class="social-button-inline">
+            <img src="instagram.svg" alt="instagram" />
+          </div>
+        </div>
+      </div>
+    </section>
+  </body>
+</html>

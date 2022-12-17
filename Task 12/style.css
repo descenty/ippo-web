@@ -1,0 +1,611 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap");
+@import url("https://cdn-uicons.flaticon.com/uicons-bold-rounded/css/uicons-bold-rounded.css");
+@import url("https://cdn-uicons.flaticon.com/uicons-solid-straight/css/uicons-solid-straight.css");
+@import url("https://cdn-uicons.flaticon.com/uicons-regular-rounded/css/uicons-regular-rounded.css");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: #222831;
+  color: white;
+  font-family: "Roboto";
+}
+
+section {
+  display: flex;
+  height: 100vh;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+button {
+  cursor: pointer;
+}
+
+#friends {
+  display: flex;
+  flex-direction: column;
+  gap: 2em;
+  padding: 1em;
+  width: 100%;
+  height: 100%;
+  align-items: center;
+  justify-content: center;
+}
+
+#friends h2 {
+  text-align: center;
+}
+
+#friends-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1em;
+  width: 100%;
+}
+
+@media (max-width: 800px) {
+  #friends-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+#friends-grid > div {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5em;
+  border-radius: 10px;
+  border-style: solid;
+  background: linear-gradient(
+    45deg,
+    rgba(77, 61, 237, 1) 0%,
+    rgba(224, 19, 154, 1) 100%
+  );
+  border-width: 0px;
+  padding: 1em;
+  cursor: pointer;
+  transition: 0.3s;
+  position: relative;
+}
+
+#friends-grid > div > .overlay-data {
+  left: 0;
+  top: 0;
+  border-radius: 10px;
+  padding: 1.5em;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    45deg,
+    rgba(77, 61, 237, 1) 0%,
+    rgba(224, 19, 154, 1) 100%
+  );
+  text-align: center;
+  transition: 0.5s;
+}
+
+#friends-grid > div:hover > .overlay-data {
+  opacity: 0;
+}
+
+#friends-grid > div > div {
+  display: flex;
+  align-items: center;
+  gap: 1em;
+}
+
+#cards-section {
+  gap: 2em;
+  flex-wrap: wrap;
+  height: 150vh;
+}
+
+.card {
+  background: #3f3f3f;
+  display: flex;
+  flex-direction: column;
+  gap: 0.7em;
+  width: 270px;
+  padding: 1em;
+  position: relative;
+  overflow: hidden;
+  transition: 0.3s;
+  --color: #17e78c;
+  --gradient: linear-gradient(
+    180deg,
+    rgba(63, 63, 63, 0) 50%,
+    rgba(63, 63, 63, 1) 100%
+  );
+}
+
+.card::after {
+  position: absolute;
+  content: "";
+  background: var(--color);
+  right: -68px;
+  top: -65px;
+  width: 100px;
+  height: 100px;
+  rotate: 45deg;
+  transition: 0.3s;
+}
+
+.card:hover {
+  box-shadow: 1px 1px 4px var(--color);
+}
+
+.card img {
+  width: max-content;
+  height: 100px;
+}
+
+.card p {
+  color: rgb(205, 205, 205);
+  font-size: 14px;
+  position: absolute;
+}
+
+.card div {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  height: 200px;
+  transition: 0.5s;
+}
+
+.card div::after {
+  content: "";
+  display: block;
+  width: 100%;
+  height: 100%;
+  background: var(--gradient);
+  position: absolute;
+}
+
+.card button {
+  background: var(--color);
+  width: max-content;
+  height: max-content;
+  border-style: none;
+  padding: 0.6em 1em;
+  border-radius: 5px;
+}
+
+nav {
+  position: relative;
+  display: flex;
+}
+
+nav a {
+  position: relative;
+  margin: 0 20px;
+  font-size: 2.5vw;
+  color: white;
+  text-decoration: none;
+}
+
+nav #marker {
+  position: absolute;
+  left: 0;
+  height: 3px;
+  width: 0;
+  background: linear-gradient(
+    45deg,
+    rgba(77, 61, 237, 1) 0%,
+    rgba(224, 19, 154, 1) 100%
+  );
+  bottom: -8px;
+  transition: 0.5s;
+  border-radius: 4px;
+}
+
+#modal-section {
+  padding: 1em;
+}
+
+#modal-section button {
+  background: #27ae60;
+  color: white;
+  padding: 0.5em 1em;
+  border-style: none;
+  transition: 0.3s;
+  border-radius: 5px;
+}
+
+#modal-section button:hover {
+  transform: scale(1.05);
+}
+
+.modal-window {
+  position: absolute;
+  display: none;
+  flex-direction: column;
+  width: 280px;
+  height: 222px;
+  right: 1em;
+  bottom: 1em;
+  background: white;
+  transition: 0.3s;
+}
+
+.modal-window:hover {
+  transform: scale(1.05);
+}
+
+.modal-window > div:nth-child(1) {
+  height: 100px;
+  background-color: #34495e;
+  padding: 0.4em;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5em;
+}
+
+.modal-window > div:nth-child(1) > div {
+  display: flex;
+  justify-content: space-between;
+  font-size: 15px;
+  align-items: center;
+  padding-inline: 0.1em;
+  align-items: center;
+}
+
+.modal-window > div:nth-child(1) > div > i {
+  font-size: 11px;
+  cursor: pointer;
+  width: 24px;
+  height: 24px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-width: 1px;
+  border-radius: 10px;
+}
+
+.modal-window > div:nth-child(1) > div > i:hover {
+  border-style: solid;
+}
+
+.modal-window > div:nth-child(1) > i {
+  font-size: 55px;
+  align-self: center;
+}
+
+.modal-window > div:nth-child(2) {
+  color: black;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0.5em;
+  text-align: center;
+  font-size: 14px;
+}
+
+.modal-window > div:nth-child(2) h2 {
+  font-size: 20px;
+  color: #34495e;
+}
+
+.modal-window > div:nth-child(2) > p {
+  color: gray;
+  margin-bottom: 10px;
+}
+
+#input-section input {
+  padding: 0.5em;
+  border-radius: 10px;
+  outline: none;
+  border-style: none;
+  width: 100%;
+  font-size: 18px;
+}
+
+#input-section > div {
+  position: relative;
+  background: white;
+  outline-style: none;
+  outline-width: 2px;
+  border-radius: 10px;
+  padding: 0.2em;
+  color: gray;
+  text-indent: 5px;
+  width: 350px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 20px;
+}
+
+#input-section > div > span {
+  padding-inline: 5px;
+}
+
+#input-section > div > .char-counter {
+  border-left: 1px solid gray;
+}
+
+#input-section div:has(input:focus) {
+  color: red;
+  outline-style: solid;
+}
+
+#input-section div:has(input:focus) > .char-counter {
+  border-left: 1px solid red;
+}
+
+.navigation {
+  position: relative;
+}
+
+.navigation ul {
+  display: flex;
+}
+
+.navigation ul li {
+  position: relative;
+  list-style: none;
+  width: px;
+  height: 70px;
+  width: 90px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  z-index: 1;
+}
+
+.navigation ul li a {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  color: white;
+  text-align: center;
+  text-decoration: none;
+  height: 100%;
+}
+
+.navigation ul li a i {
+  position: relative;
+  line-height: 75px;
+  transition: 0.5s;
+  font-size: 36px;
+}
+
+.navigation ul li.active a i {
+  font-size: 24px;
+  transform: translateY(-6px);
+}
+
+.navigation ul li a .text {
+  position: absolute;
+  font-size: 12px;
+  color: white;
+  font-weight: 400;
+  transition: 0.25s;
+  text-transform: uppercase;
+  transform: scale(0);
+  bottom: 10px;
+}
+
+.navigation ul li.active a .text {
+  transform: scale(1);
+}
+
+.indicator {
+  position: absolute;
+  left: 0;
+  width: 90px;
+  height: 70px;
+  border-radius: 10px;
+  transition: 0.5s;
+}
+
+.navigation ul li:nth-child(1).active ~ .indicator {
+  background: #f53b57;
+  box-shadow: 0 15px 25px #f53b5799;
+  transform: translateX(calc(90px * 0));
+}
+
+.navigation ul li:nth-child(2).active ~ .indicator {
+  background: #5d62fb;
+  box-shadow: 0 15px 25px #5d62fb99;
+  transform: translateX(calc(90px * 1));
+}
+
+.navigation ul li:nth-child(3).active ~ .indicator {
+  background: #05c46b;
+  box-shadow: 0 15px 25px #05c46b99;
+  transform: translateX(calc(90px * 2));
+}
+
+.navigation ul li:nth-child(4).active ~ .indicator {
+  background: #0fbcf9;
+  box-shadow: 0 15px 25px #0fbcf999;
+  transform: translateX(calc(90px * 3));
+}
+
+.navigation ul li:nth-child(5).active ~ .indicator {
+  background: #ffa801;
+  box-shadow: 0 15px 25px #ffa80199;
+  transform: translateX(calc(90px * 4));
+}
+
+.effect-button {
+  font-size: 18px;
+  padding: 0.6em 3em;
+  background: #ff1876;
+  color: white;
+  border-radius: 40px;
+  border-style: none;
+  cursor: pointer;
+  position: relative;
+  box-shadow: 0 2px 25px rgba(255, 0, 130, 0.5);
+  transition: 0.25s;
+  z-index: 2;
+}
+
+.effect-button:active {
+  background: #d80972;
+  box-shadow: 0 2px 25px rgba(255, 0, 130, 0.2);
+}
+
+.effect-button span {
+  background: #ff1876;
+  border: 8px solid #ff1876;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  position: absolute;
+  z-index: -1;
+  transform: scale(0);
+}
+
+.effect-button span:nth-child(1) {
+  top: -100%;
+  left: -10%;
+}
+
+.effect-button span:nth-child(2) {
+  top: -200%;
+  left: 0;
+}
+
+.effect-button span:nth-child(3) {
+  top: 100%;
+  left: 50%;
+  background: transparent;
+}
+
+.effect-button span:nth-child(4) {
+  top: -250%;
+  left: 20%;
+}
+
+.effect-button span:nth-child(5) {
+  top: -90%;
+  left: 28%;
+  background: transparent;
+}
+
+.effect-button span:nth-child(6) {
+  top: -150%;
+  left: 42%;
+}
+
+.effect-button span:nth-child(7) {
+  top: -80%;
+  left: 60%;
+  background: transparent;
+}
+
+.effect-button span:nth-child(8) {
+  top: -50%;
+  left: 70%;
+}
+
+.effect-button span:nth-child(9) {
+  top: -120%;
+  left: 80%;
+}
+
+.effect-button span:nth-child(10) {
+  top: -70%;
+  left: 90%;
+}
+
+.effect-button span:nth-child(11) {
+  top: -80%;
+  left: 100%;
+  background: transparent;
+}
+
+.effect-button span:nth-child(12) {
+  top: -50%;
+  left: 110%;
+}
+
+.effect-button span:nth-child(13) {
+  top: 40%;
+  left: -20%;
+}
+
+.effect-button span:nth-child(14) {
+  top: 60%;
+  left: 120%;
+  background: transparent;
+}
+
+.effect-button span:nth-child(15) {
+  top: 160%;
+  left: 150%;
+}
+
+.effect-button span:nth-child(16) {
+  top: 120%;
+  left: 35%;
+  background: transparent;
+}
+
+.effect-button span:nth-child(17) {
+  top: 180%;
+  left: 100%;
+}
+
+.effect-button span:nth-child(18) {
+  top: 130%;
+  left: 20%;
+}
+
+.effect-button span:nth-child(19) {
+  top: 180%;
+  left: 100%;
+  background: transparent;
+}
+
+.effect-button span:nth-child(20) {
+  top: 180%;
+  left: 10%;
+}
+
+.effect-button span:nth-child(21) {
+  top: 160%;
+  left: 75%;
+}
+
+.effect-button span:nth-child(22) {
+  top: 130%;
+  left: -100%;
+  background: transparent;
+}
+
+.effect-button span:nth-child(23) {
+  top: 100%;
+  left: 100%;
+}
+
+.effect-button span:nth-child(24) {
+  top: 300%;
+  left: 120%;
+}
+
+.anim {
+  animation: moving 0.5s ease-out;
+}
+
+@keyframes moving {
+  0% {
+    top: 20%;
+    left: 30%;
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(0);
+  }
+}

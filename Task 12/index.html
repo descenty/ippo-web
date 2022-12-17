@@ -1,0 +1,289 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Взаимодействие с объектами DOM</title>
+  </head>
+  <body>
+    <section>
+      <h1
+        id="emoji-switch"
+        style="font-size: 100px; cursor: pointer; user-select: none"
+      >
+        🙈
+      </h1>
+      <script>
+        let emojiToggle = false;
+        let emojiSwitch = document.getElementById("emoji-switch");
+        emojiSwitch.onclick = () => {
+          emojiSwitch.innerText = (emojiToggle = !emojiToggle) ? "🙉" : "🙈";
+        };
+      </script>
+    </section>
+    <section>
+      <div id="friends">
+        <h2>Друзья</h2>
+        <div id="friends-grid"></div>
+      </div>
+      <script>
+        const friends = [
+          {
+            name: "Максим",
+            age: 20,
+            hobby: "Футбол",
+          },
+          {
+            name: "Павел",
+            age: 19,
+            hobby: "История",
+          },
+          {
+            name: "Владимир",
+            age: 20,
+            hobby: "Программирование",
+          },
+          {
+            name: "Даша",
+            age: 20,
+            hobby: "Гитара",
+          },
+        ];
+        let friendsGrid = document.getElementById("friends-grid");
+        friends.map((friend) => {
+          let friendElement = Object.assign(document.createElement("div"), {
+            innerHTML:
+              '<div class="overlay-data"><p>{name} отмечает {age}-й день рождения</p></div><div><h3>{name}</h3><span class="age-span">{age} лет</span></div><span class="hobby-span">{hobby}</span>',
+          });
+          friendElement.querySelector(
+            ".overlay-data p"
+          ).innerHTML = `${friend.name} отмечает ${friend.age}-й день рождения`;
+          friendElement.querySelector("h3").innerHTML = friend.name;
+          friendElement.querySelector(".age-span").innerHTML = friend.age;
+          friendElement.querySelector(".hobby-span").innerHTML = friend.hobby;
+          friendsGrid.appendChild(friendElement);
+        });
+      </script>
+    </section>
+    <section id="cards-section">
+      <div class="card">
+        <img src="cloud.png" alt="cloud" />
+        <h3>Заголовок 1</h3>
+        <div>
+          <p>
+            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Vero
+            dolorum, soluta explicabo deleniti quas dolore pariatur accusantium
+            expedita cum, ratione delectus natus porro quia corrupti totam
+            consectetur nobis vel ex iusto, id odio. Quisquam officia sed facere
+            magni. Aut neque maxime repellendus accusamus odio id eum non,
+            consequuntur nisi harum voluptates dolores ex unde! Vero numquam,
+            nesciunt molestias dolorum deserunt sapiente doloribus vel iste quas
+            dolores nam quis consequuntur. Quas beatae tempora harum odit
+            recusandae.
+          </p>
+        </div>
+        <button onclick="openCard(0)">Подробнее</button>
+      </div>
+      <div class="card">
+        <img src="coding-language.png" alt="coding-language" />
+        <h3>Заголовок 1</h3>
+        <div>
+          <p>
+            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Vero
+            dolorum, soluta explicabo deleniti quas dolore pariatur accusantium
+            expedita cum, ratione delectus natus porro quia corrupti totam
+            consectetur nobis vel ex iusto, id odio. Quisquam officia sed facere
+            magni. Aut neque maxime repellendus accusamus odio id eum non,
+            consequuntur nisi harum voluptates dolores ex unde! Vero numquam,
+            nesciunt molestias dolorum deserunt sapiente doloribus vel iste quas
+            dolores nam quis consequuntur. Quas beatae tempora harum odit
+            recusandae.
+          </p>
+        </div>
+        <button onclick="openCard(1)">Подробнее</button>
+      </div>
+      <div class="card">
+        <img src="desktop.png" alt="desktop" />
+        <h3>Заголовок 1</h3>
+        <div>
+          <p>
+            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Vero
+            dolorum, soluta explicabo deleniti quas dolore pariatur accusantium
+            expedita cum, ratione delectus natus porro quia corrupti totam
+            consectetur nobis vel ex iusto, id odio. Quisquam officia sed facere
+            magni. Aut neque maxime repellendus accusamus odio id eum non,
+            consequuntur nisi harum voluptates dolores ex unde! Vero numquam,
+            nesciunt molestias dolorum deserunt sapiente doloribus vel iste quas
+            dolores nam quis consequuntur. Quas beatae tempora harum odit
+            recusandae.
+          </p>
+        </div>
+        <button onclick="openCard(2)">Подробнее</button>
+      </div>
+      <script>
+        function openCard(index) {
+          let card = document.getElementsByClassName("card")[index];
+          let textDiv = card.getElementsByTagName("div")[0];
+          let closed = textDiv.style.height != "280px";
+          textDiv.style.height = closed ? "280px" : "200px";
+          card.style.setProperty("--color", closed ? "#FF3B7E" : "#17E78C");
+          card.style.setProperty(
+            "--gradient",
+            closed
+              ? "none"
+              : "linear-gradient(180deg,rgba(63, 63, 63, 0) 50%,rgba(63, 63, 63, 1) 100%)"
+          );
+          let openButton = (card.getElementsByTagName("button")[0].style.color =
+            closed ? "white" : "black");
+        }
+      </script>
+    </section>
+    <section id="nav-section">
+      <nav>
+        <div id="marker"></div>
+        <a href="#nav-section">Главная</a>
+        <a href="#nav-section">Раздел 1</a>
+        <a href="#nav-section">Раздел 2</a>
+        <a href="#nav-section">Раздел 3</a>
+        <a href="#nav-section">Раздел 4</a>
+      </nav>
+      <script>
+        let marker = document.querySelector("#marker");
+        let item = document.querySelectorAll("nav a");
+
+        function indicator(e) {
+          marker.style.left = e.offsetLeft + "px";
+          marker.style.width = e.offsetWidth + "px";
+        }
+
+        item.forEach((link) => {
+          link.onclick = (e) => indicator(e.target);
+        });
+      </script>
+    </section>
+    <section>
+      <div class="navigation">
+        <ul>
+          <li class="list">
+            <a href="#">
+              <i class="fi fi-rr-home"></i>
+              <span class="text">Главная</span>
+            </a>
+          </li>
+          <li class="list">
+            <a href="#">
+              <i class="fi fi-rr-user"></i>
+              <span class="text">Профиль</span>
+            </a>
+          </li>
+          <li class="list">
+            <a href="#">
+              <i class="fi fi-rr-comments"></i>
+              <span class="text">Сообщения</span>
+            </a>
+          </li>
+          <li class="list">
+            <a href="#">
+              <i class="fi fi-rr-info"></i>
+              <span class="text">Помощь</span>
+            </a>
+          </li>
+          <li class="list">
+            <a href="#">
+              <i class="fi fi-rr-settings"></i>
+              <span class="text">Настройки</span>
+            </a>
+          </li>
+          <div class="indicator"></div>
+        </ul>
+      </div>
+      <script>
+        let list = document.querySelectorAll(".list");
+        function setActiveClass() {
+          list.forEach((item) => item.classList.remove("active"));
+          this.classList.add("active");
+        }
+        list.forEach((item) =>
+          item.addEventListener("mouseover", setActiveClass)
+        );
+      </script>
+    </section>
+    <section id="modal-section">
+      <button onclick="toggleModal()">Показать окно</button>
+      <div class="modal-window">
+        <div>
+          <div>
+            <span>Уведомление</span>
+            <i class="fi fi-br-cross" onclick="toggleModal()"></i>
+          </div>
+          <i class="fi fi-ss-camera"></i>
+        </div>
+        <div>
+          <h2>Заголовок 1</h2>
+          <p>Создайте простое модальное окно, используя HTML, CSS и JS</p>
+          <button onclick="toggleModal()">Закрыть</button>
+        </div>
+      </div>
+      <script>
+        let modalWindow = document.querySelector(".modal-window");
+        let i = 0;
+        function toggleModal() {
+          modalWindow.style.display = i++ % 2 == 0 ? "flex" : "none";
+        }
+      </script>
+    </section>
+    <section>
+      <button class="effect-button">
+        Click
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+      <script>
+        let effectButton = document.querySelector(".effect-button");
+        let spans = document.querySelectorAll("span");
+        effectButton.onclick = () => {
+          spans.forEach((span) => span.classList.add("anim"));
+          setTimeout(
+            () => spans.forEach((span) => span.classList.remove("anim")),
+            500
+          );
+        };
+      </script>
+    </section>
+    <section id="input-section">
+      <div>
+        <span>@</span>
+        <input type="text" placeholder="username" maxlength="16" />
+        <span class="char-counter">16</span>
+      </div>
+      <script>
+        let charCounter = document.querySelector(".char-counter");
+        let input = document.querySelector("#input-section input");
+        input.oninput = () => (charCounter.innerHTML = 16 - input.value.length);
+      </script>
+    </section>
+  </body>
+</html>

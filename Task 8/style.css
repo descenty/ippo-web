@@ -1,0 +1,643 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@200;300&family=Roboto&display=swap");
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "Montserrat";
+  background: #222831;
+  display: flex;
+  flex-direction: column;
+}
+
+#first-grid-section,
+#second-grid-section {
+  display: grid;
+  width: 100%;
+  height: 50vh;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+  padding: 10px;
+  gap: 2px;
+}
+
+#first-grid-section > div {
+  background-color: white;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 24px;
+  font-weight: bold;
+  transition: 0.5s;
+  cursor: pointer;
+}
+
+#first-grid-section > div:hover {
+  color: white;
+  font-size: 32px;
+  background-color: #2196f3;
+}
+
+#second-grid-section {
+  gap: 10px;
+  height: 100vh;
+}
+
+#second-grid-section > div {
+  background-color: #333333;
+  color: white;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  transition: 0.5s;
+  font-size: max(9px, 1.1vw);
+  gap: 10px;
+  padding: 20px;
+  cursor: pointer;
+}
+
+#second-grid-section > div > img {
+  width: 5vw;
+}
+
+#second-grid-section > div:hover {
+  background-color: #e91e63;
+}
+
+#third-grid-section {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+  padding: 20px;
+}
+
+@media (max-width: 900px) {
+  #third-grid-section {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 710px) {
+  #third-grid-section {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+#third-grid-section > div {
+  background-color: black;
+  color: white;
+  display: grid;
+  border-radius: 20px;
+  text-align: center;
+  padding: 20px;
+  height: 285px;
+  grid-template-rows: repeat(6, 1fr);
+  gap: 5px;
+  transition: 0.5s;
+}
+
+#third-grid-section > div:hover {
+  transform: scale(1.1);
+}
+
+#third-grid-section > div > p {
+  font-size: 14px;
+}
+
+#third-grid-section > div > h3 {
+  align-self: flex-end;
+  text-transform: uppercase;
+}
+
+#third-grid-section > div > h1 {
+  font-size: 80px;
+  color: white;
+  grid-row: span 3;
+  opacity: 0.5;
+}
+
+#third-grid-section > div:nth-child(1) {
+  background: linear-gradient(
+    45deg,
+    rgba(7, 115, 186, 1) 0%,
+    rgba(97, 230, 253, 1) 100%
+  );
+}
+
+#third-grid-section > div:nth-child(2) {
+  background: linear-gradient(
+    45deg,
+    rgba(233, 32, 104, 1) 0%,
+    rgba(237, 82, 248, 1) 100%
+  );
+}
+
+#third-grid-section > div:nth-child(3) {
+  background: linear-gradient(
+    45deg,
+    rgba(7, 115, 55, 1) 0%,
+    rgba(0, 248, 111, 1) 100%
+  );
+}
+
+#third-grid-section > div:nth-child(4) {
+  background: linear-gradient(
+    45deg,
+    rgba(240, 94, 77, 1) 0%,
+    rgba(243, 187, 49, 1) 100%
+  );
+}
+
+#fourth-grid-section {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 50px;
+  padding: 20px;
+  justify-items: center;
+}
+
+@media (max-width: 880px) {
+  #fourth-grid-section {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  #fourth-grid-section {
+    grid-template-columns: repeat(1, 1fr);
+  }
+}
+
+#fourth-grid-section > div {
+  display: grid;
+  grid-template-rows: repeat(7, 1fr);
+  background-color: white;
+  border-radius: 20px;
+  overflow: hidden;
+  width: 250px;
+  transition: 0.5s;
+}
+
+#fourth-grid-section > div:hover {
+  transform: scale(1.1);
+}
+
+#fourth-grid-section > div > .content > span {
+  font-size: 12px;
+  color: #ff076e;
+  font-weight: bold;
+}
+
+#fourth-grid-section > div > .content {
+  grid-row: span 3;
+  text-align: center;
+  padding-inline: 5px;
+}
+
+#fourth-grid-section > div > .content > p {
+  font-size: 13px;
+}
+
+#fourth-grid-section > div > img {
+  width: 100%;
+  grid-row: span 3;
+}
+
+#fourth-grid-section > div > .card-footer {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  background-color: rgb(63, 63, 63);
+  gap: 1px;
+  color: white;
+}
+
+#fourth-grid-section > div > .card-footer > div {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+}
+
+#fourth-grid-section > div > .card-footer > div > span {
+  font-size: 10px;
+  text-transform: uppercase;
+}
+
+#fourth-grid-section > div:nth-child(1) > .card-footer > div {
+  background-color: #ff076e;
+}
+
+#fourth-grid-section > div:nth-child(2) > .card-footer > div {
+  background-color: #e14306;
+}
+
+#fourth-grid-section > div:nth-child(3) > .card-footer > div {
+  background-color: #03a439;
+}
+
+#calendar-section {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.calendar {
+  width: 280px;
+  height: 500px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+
+.calendar .day-data {
+  position: absolute;
+  color: white;
+  padding: 20px;
+  top: 0;
+  text-shadow: 1px 1px 1px rgb(46, 46, 46);
+}
+
+.calendar > img {
+  width: 100%;
+  filter: brightness(70%);
+}
+
+.calendar-days {
+  background-color: white;
+  height: 200px;
+  padding: 15px;
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  grid-template-rows: repeat(6, 1fr);
+  column-gap: 10px;
+}
+
+.calendar-days > span {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: Arial, Helvetica, sans-serif;
+  cursor: pointer;
+  font-size: 15px;
+}
+
+.calendar-days > .red-day {
+  color: red;
+}
+
+.calendar-days > span:hover {
+  background-color: #009588;
+  color: white;
+}
+
+.calendar-days > .red-day:hover {
+  background-color: red;
+}
+
+#web-grid-section {
+  display: grid;
+  grid-template-rows: repeat(3, 1fr);
+  grid-template-columns: repeat(4, 1fr);
+  position: relative;
+  width: 100%;
+  height: 350px;
+  gap: 9px;
+  padding: 9px;
+}
+
+#web-grid-section > div {
+  border-radius: 10px;
+  overflow: hidden;
+  position: relative;
+  cursor: pointer;
+}
+
+#web-grid-section > div > span {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  padding: 15px;
+  color: white;
+  font-size: 11px;
+  font-weight: bold;
+  text-transform: uppercase;
+  width: 100%;
+  background: linear-gradient(to top, black, transparent);
+  opacity: 0;
+  transition: 0.5s;
+}
+
+#web-grid-section > div > img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: 1s;
+}
+
+#web-grid-section > div:nth-child(1) {
+  grid-row: 2 span;
+}
+
+#web-grid-section > div:nth-child(3) {
+  grid-column: 2 span;
+}
+
+#web-grid-section > div:nth-child(5) {
+  grid-row: 2 span;
+}
+
+#web-grid-section > div:nth-child(6) > img {
+  transform: scale(1.4);
+}
+
+#web-grid-section > div:nth-child(6):hover > img {
+  transform: scale(1.7);
+}
+
+#web-grid-section > div:nth-child(7) {
+  grid-column: 2 span;
+}
+
+#web-grid-section > div:hover > img {
+  transform: scale(1.3);
+}
+
+#web-grid-section > div:hover > span {
+  opacity: 1;
+}
+
+#form-grid-section {
+  display: flex;
+  height: 100vh;
+  justify-content: center;
+  align-items: center;
+}
+
+.grid-form {
+  width: 80%;
+  padding: 20px;
+}
+
+.grid-form h2 {
+  width: 100%;
+  color: white;
+  font-size: 36px;
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+.grid-form .row100 {
+  position: relative;
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+}
+
+.grid-form .row100 .col {
+  position: relative;
+  width: 100%;
+  padding: 0 10px;
+  margin: 30px 0 10px;
+  transition: 0.5s;
+}
+
+.grid-form .row100 .inputBox {
+  position: relative;
+  width: 100%;
+  height: 40px;
+  color: white;
+}
+
+.grid-form .row100 .inputBox input,
+.grid-form .row100 .inputBox.textarea textarea {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: transparent;
+  box-shadow: none;
+  border: none;
+  outline: none;
+  font-size: 18px;
+  padding: 0 10px;
+  z-index: 1;
+  color: #000;
+}
+
+.grid-form .row100 .inputBox .text {
+  position: absolute;
+  top: 0;
+  left: 0;
+  line-height: 40px;
+  font-size: 18px;
+  padding: 0 10px;
+  display: block;
+  transition: 0.5s;
+  pointer-events: none;
+}
+
+.grid-form .row100 .inputBox input:focus + .text,
+.grid-form .row100 .inputBox input:valid + .text {
+  top: -35px;
+  left: -10px;
+}
+
+.grid-form .row100 .inputBox .line {
+  position: absolute;
+  bottom: 0;
+  display: block;
+  width: 100%;
+  height: 2px;
+  background: #45f3ff;
+  transition: 0.5s;
+  border-radius: 2px;
+  pointer-events: none;
+}
+
+.grid-form .row100 .inputBox input:focus ~ .line,
+.grid-form .row100 .inputBox input:valid ~ .line {
+  height: 100%;
+}
+
+.grid-form .row100 .inputBox.textarea {
+  position: relative;
+  width: 100%;
+  height: 100px;
+  padding: 10px 0;
+}
+
+.grid-form .row100 .inputBox.textarea textarea {
+  height: 100%;
+  resize: none;
+}
+
+.grid-form .row100 .inputBox textarea:focus + .text,
+.grid-form .row100 .inputBox textarea:valid + .text {
+  top: -35px;
+  left: -10px;
+}
+
+.grid-form .row100 .inputBox textarea:focus ~ .line,
+.grid-form .row100 .inputBox textarea:valid ~ .line {
+  height: 100%;
+}
+
+input[type="submit"] {
+  border: none;
+  padding: 7px 35px;
+  cursor: pointer;
+  outline: none;
+  background: #45f3ff;
+  color: #000;
+  font-size: 18px;
+  border-radius: 2px;
+}
+
+
+footer {
+  position: relative;
+  width: 100%;
+  height: auto;
+  padding: 50px 100px;
+  background: #3044a5; 
+}
+
+footer .container {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr 1fr;
+  grid-gap: 20px;
+}
+
+footer .container .sec h2 {
+  position: relative;
+  color: #fff;
+  font-weight: 500;
+  margin-bottom: 15px;
+}
+
+footer .container .sec h2::before {
+  content: '';
+  position: absolute;
+  bottom: -5px;
+  left: 0;
+  width: 50px;
+  height: 2px;
+  background: #ffeb3b;
+}
+
+footer .container .sec p {
+  color: #fff;
+}
+
+.social-buttons {
+  margin-top: 20px;
+  display: grid;
+  grid-template-columns: repeat(4, 50px);
+  grid-gap: 10px
+}
+
+.social-buttons li {
+  list-style: none;
+}
+
+.social-buttons li a {
+  width: 48px;
+  height: 48px;
+  background: #3e56cb;
+  display: grid;
+  align-content: center;
+  justify-content: center;
+  text-decoration: none;
+  border-radius: 4px;
+}
+
+.social-buttons li a:hover {
+  background: #6380fe;
+}
+
+.social-buttons li a .fi {
+  color: #fff;
+  font-size: 20px;
+}
+
+.quick-links {
+  position: relative;
+}
+
+.quick-links li {
+  list-style: none;
+}
+
+.quick-links li a {
+  color: #f7f7f7;
+  text-decoration: none;
+  margin-bottom: 10px;
+  display: inline-block;
+}
+
+.quick-links li a:hover {
+  color: #ffeb3b;
+}
+
+.info {
+  position: relative;
+}
+
+.info li {
+  display: grid;
+  grid-template-columns: 30px 1fr;
+  margin-bottom: 16px;
+}
+
+.info li span:nth-child(1) {
+  color: #fff;
+  font-size: 20px;
+}
+
+.info li span {
+  color: #fff;
+}
+
+.info a {
+  color: #f7f7f7;
+  text-decoration: none;
+}
+
+.quick-links{
+  color: #ffeb3b;
+}
+
+.copyrightText {
+  width: 100%;
+  background: #1f3389;
+  padding: 8px 100px;
+  text-align: center;
+  color: #fff;
+}
+
+@media (max-width: 1000px) {
+  footer {
+    padding: 40px;
+  }
+  footer .container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px){
+  footer .container {
+    grid-template-columns: repeat(1, 1fr);
+  }
+}

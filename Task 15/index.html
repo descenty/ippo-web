@@ -1,0 +1,151 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Работа с объектами геолокации</title>
+  </head>
+  <body>
+    <section id="movies-section">
+      <script>
+        const moviesSection = document.querySelector("#movies-section");
+        fetch(
+          "https://api.themoviedb.org/3/movie/popular?api_key=e1dc312f6c89f0f774684039c6d67a06"
+        ).then((response) =>
+          response.json().then((data) => {
+            data.results.slice(0, 10).forEach((movie) => {
+              const movieElement = Object.assign(
+                document.createElement("div"),
+                {
+                  innerHTML: `<img src="https://image.tmdb.org/t/p/w500/${movie.poster_path}" alt=""/><h3>${movie.title}</h3>`,
+                }
+              );
+              movieElement.classList.add("movie");
+              moviesSection.appendChild(movieElement);
+            });
+          })
+        );
+      </script>
+    </section>
+    <section>
+      <div class="weather-window">
+        <div class="weather-input-panel">
+          <div>
+            <h2>Weather App</h2>
+          </div>
+          <div>
+            <input
+              type="text"
+              placeholder="Enter city name"
+              onkeydown="dataBySearch(this)"
+            />
+            <div>
+              <hr />
+              <span>or</span>
+            </div>
+            <button onclick="dataByLocation()">Get Device Location</button>
+          </div>
+        </div>
+        <div class="weather-data-panel" style="display: none">
+          <div>
+            <i class="fi fi-rr-arrow-small-left" onclick="toInputPanel()"></i>
+            <h2>Weather App</h2>
+          </div>
+          <div>
+            <img class="weather-icon" src="" alt="" />
+            <h1 class="temperature">-1°C</h1>
+            <h3 class="weather-name">overcast clouds</h3>
+            <div class="location-div">
+              <i class="fi fi-br-marker"></i>
+              <h3 class="location-name">Moscow, RU</h3>
+            </div>
+            <div class="weather-stats">
+              <div>
+                <i class="fi fi-rr-temperature-low"></i>
+                <div>
+                  <h4 class="feels-like">-5°C</h4>
+                  <span>Feels like</span>
+                </div>
+              </div>
+              <div>
+                <i class="fi fi-rs-humidity"></i>
+                <div>
+                  <h4 class="humidity">92%</h4>
+                  <span>Humidity</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <script>
+        const weatherWindow = document.querySelector(".weather-window");
+        const weatherDataPanel = weatherWindow.querySelector(
+          ".weather-data-panel"
+        );
+        const weatherIcon = weatherDataPanel.querySelector(".weather-icon");
+        const weatherName = weatherDataPanel.querySelector(".weather-name");
+        const temperature = weatherDataPanel.querySelector(".temperature");
+        const locationName = weatherDataPanel.querySelector(".location-name");
+        const feelsLike = weatherDataPanel.querySelector(".feels-like");
+        const humidity = weatherDataPanel.querySelector(".humidity");
+        const toInputPanel = () => {
+          weatherWindow.classList.remove("opened");
+          weatherWindow.lastElementChild.style.display = "none";
+          weatherWindow.firstElementChild.style.display = "flex";
+        };
+        const toDataPanel = (data) => {
+          weatherWindow.classList.add("opened");
+          weatherWindow.firstElementChild.style.display = "none";
+          weatherWindow.lastElementChild.style.display = "flex";
+
+          weatherIcon.src = `weather/${data.weather[0].icon}.png`;
+          weatherName.innerText = data.weather[0].description;
+          temperature.innerText = Math.round(data.main.temp) + "°C";
+          locationName.innerText = `${data.name}, ${data.sys.country}`;
+          feelsLike.innerText = Math.round(data.main.feels_like) + "°C";
+          humidity.innerText = data.main.humidity + "%";
+        };
+
+        const appid = "879b6e4ef63abefd6fa01b2a25c7999a";
+        const getWeatherData = (query) =>
+          new Promise((resolve, reject) => {
+            fetch(
+              "https://api.openweathermap.org/data/2.5/weather?units=metric&appid=879b6e4ef63abefd6fa01b2a25c7999a&" +
+                query
+            )
+              .then((response) =>
+                response.ok
+                  ? response.json().then((data) => resolve(data))
+                  : reject("Failed to get weather data")
+              )
+              .catch(() => reject("Failed to get weather data"));
+          });
+
+        const dataBySearch = (element) =>
+          event.key === "Enter" &&
+          getWeatherData("q=" + element.value)
+            .then((data) => toDataPanel(data))
+            .catch((reason) => alert(reason));
+
+        const dataByLocation = () => {
+          navigator.geolocation.getCurrentPosition(
+            (pos) =>
+              getWeatherData(
+                `lat=${pos.coords.latitude}&lon=${pos.coords.longitude}`
+              )
+                .then((data) => toDataPanel(data))
+                .catch((reason) => alert(reason)),
+            () => alert("Failed to get location data"),
+            {
+              enableHighAccuracy: true,
+              timeout: 5000,
+              maximumAge: 0,
+            }
+          );
+        };
+      </script>
+    </section>
+  </body>
+</html>

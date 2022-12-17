@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Работа со свойствами модуля Grid Layout</title>
+    <link
+      rel="stylesheet"
+      href="https://cdn-uicons.flaticon.com/uicons-regular-rounded/css/uicons-regular-rounded.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn-uicons.flaticon.com/uicons-brands/css/uicons-brands.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn-uicons.flaticon.com/uicons-solid-straight/css/uicons-solid-straight.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn-uicons.flaticon.com/uicons-solid-rounded/css/uicons-solid-rounded.css"
+    />
+    <link rel="stylesheet" type="text/css" href="style.css" />
+  </head>
+  <body>
+    <section id="first-grid-section">
+      <div>1</div>
+      <div>2</div>
+      <div>3</div>
+      <div>4</div>
+      <div>5</div>
+      <div>6</div>
+      <div>7</div>
+      <div>8</div>
+      <div>9</div>
+      <div>10</div>
+      <div>11</div>
+      <div>12</div>
+    </section>
+    <section id="second-grid-section">
+      <div style="grid-column: span 2">
+        <img src="icons/desktop.png" alt="desktop" />
+        <p>
+          Lorem ipsum dolor sit amet consectetur, adipisicing elit. Consectetur
+          exercitationem alias similique commodi doloremque sapiente?
+        </p>
+      </div>
+      <div style="grid-row: span 2">
+        <img src="icons/www.png" alt="www" />
+        <p>
+          Lorem ipsum dolor sit amet consectetur, adipisicing elit. Consectetur
+          exercitationem alias similique commodi doloremque sapiente?
+        </p>
+      </div>
+      <div>
+        <img src="icons/settings.png" alt="settings" />
+        <p>
+          Lorem ipsum dolor sit amet consectetur, adipisicing elit. Consectetur
+          exercitationem alias similique commodi doloremque sapiente?
+        </p>
+      </div>
+      <div style="grid-row: span 2">
+        <img src="icons/code.png" alt="code" />
+        <p>
+          Lorem ipsum dolor sit amet consectetur, adipisicing elit. Consectetur
+          exercitationem alias similique commodi doloremque sapiente?
+        </p>
+      </div>
+      <div>
+        <img src="icons/cpu.png" alt="cpu" />
+        <p>
+          Lorem ipsum dolor sit amet consectetur, adipisicing elit. Consectetur
+          exercitationem alias similique commodi doloremque sapiente?
+        </p>
+      </div>
+      <div>
+        <img src="icons/binary-code.png" alt="binary-code" />
+        <p>
+          Lorem ipsum dolor sit amet consectetur, adipisicing elit. Consectetur
+          exercitationem alias similique commodi doloremque sapiente?
+        </p>
+      </div>
+      <div style="grid-column: span 3">
+        <img src="icons/applications.png" alt="applications" />
+        <p>
+          Lorem ipsum dolor sit amet consectetur, adipisicing elit. Consectetur
+          exercitationem alias similique commodi doloremque sapiente?
+        </p>
+      </div>
+    </section>
+    <section id="third-grid-section">
+      <div class="color-card">
+        <h1>1</h1>
+        <h3>Заголовок 1</h3>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Beatae modi
+          quisquam non at nemo nostrum?
+        </p>
+      </div>
+      <div class="color-card">
+        <h1>2</h1>
+        <h3>Заголовок 2</h3>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Beatae modi
+          quisquam non at nemo nostrum?
+        </p>
+      </div>
+      <div class="color-card">
+        <h1>3</h1>
+        <h3>Заголовок 3</h3>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Beatae modi
+          quisquam non at nemo nostrum?
+        </p>
+      </div>
+      <div class="color-card">
+        <h1>4</h1>
+        <h3>Заголовок 4</h3>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Beatae modi
+          quisquam non at nemo nostrum?
+        </p>
+      </div>
+    </section>
+    <section id="fourth-grid-section">
+      <div>
+        <img src="mountain.jpg" alt="mountain" />
+        <div class="content">
+          <span>4 дня назад</span>
+          <h3>Пост 1</h3>
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Vel, sequi?
+            Consequuntur reprehenderit vitae facilis voluptatibus!
+          </p>
+        </div>
+        <div class="card-footer">
+          <div>
+            <h4>4 <sup>m</sup></h4>
+            <span>read</span>
+          </div>
+          <div>
+            <h4>432</h4>
+            <span>views</span>
+          </div>
+          <div>
+            <h4>38</h4>
+            <span>comments</span>
+          </div>
+        </div>
+      </div>
+      <div>
+        <img src="mountain.jpg" alt="mountain" />
+        <div class="content">
+          <span>4 дня назад</span>
+          <h3>Пост 2</h3>
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Vel, sequi?
+            Consequuntur reprehenderit vitae facilis voluptatibus!
+          </p>
+        </div>
+        <div class="card-footer">
+          <div>
+            <h4>4 <sup>m</sup></h4>
+            <span>read</span>
+          </div>
+          <div>
+            <h4>432</h4>
+            <span>views</span>
+          </div>
+          <div>
+            <h4>38</h4>
+            <span>comments</span>
+          </div>
+        </div>
+      </div>
+      <div>
+        <img src="mountain.jpg" alt="mountain" />
+        <div class="content">
+          <span>4 дня назад</span>
+          <h3>Пост 3</h3>
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Vel, sequi?
+            Consequuntur reprehenderit vitae facilis voluptatibus!
+          </p>
+        </div>
+        <div class="card-footer">
+          <div>
+            <h4>4 <sup>m</sup></h4>
+            <span>read</span>
+          </div>
+          <div>
+            <h4>432</h4>
+            <span>views</span>
+          </div>
+          <div>
+            <h4>38</h4>
+            <span>comments</span>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section id="calendar-section">
+      <div class="calendar">
+        <img src="autumn.jpg" alt="autumn" />
+        <div class="day-data">
+          <h1>26, Вторник</h1>
+          <h4>Октябрь | 2021</h4>
+        </div>
+        <div class="calendar-days">
+          <span><b>П</b></span>
+          <span><b>В</b></span>
+          <span><b>С</b></span>
+          <span><b>Ч</b></span>
+          <span><b>П</b></span>
+          <span><b>С</b></span>
+          <span><b>В</b></span>
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+          <span>1</span>
+          <span>2</span>
+          <span class="red-day">3</span>
+          <span>4</span>
+          <span>5</span>
+          <span>6</span>
+          <span>7</span>
+          <span>8</span>
+          <span>9</span>
+          <span class="red-day">10</span>
+          <span>11</span>
+          <span>12</span>
+          <span>13</span>
+          <span>14</span>
+          <span>15</span>
+          <span>16</span>
+          <span class="red-day">17</span>
+          <span>18</span>
+          <span>19</span>
+          <span>20</span>
+          <span>21</span>
+          <span>22</span>
+          <span>23</span>
+          <span class="red-day">24</span>
+          <span>25</span>
+          <span>26</span>
+          <span>27</span>
+          <span>28</span>
+          <span>29</span>
+          <span>30</span>
+          <span class="red-day">31</span>
+        </div>
+      </div>
+    </section>
+    <section id="web-grid-section">
+      <div>
+        <img src="web/html.jpg" alt="html" />
+        <span>веб программирование</span>
+      </div>
+      <div>
+        <img src="web/css.jpg" alt="css" />
+        <span>веб программирование</span>
+      </div>
+      <div>
+        <img src="web/js.jpg" alt="js" />
+        <span>веб программирование</span>
+      </div>
+      <div>
+        <img src="web/node-js.png" alt="node-js" />
+        <span>веб программирование</span>
+      </div>
+      <div>
+        <img src="web/react-js.png" alt="react-js" />
+        <span>веб программирование</span>
+      </div>
+      <div>
+        <img src="web/vue-js.png" alt="vue-js" />
+        <span>веб программирование</span>
+      </div>
+      <div>
+        <img src="web/angular.png" alt="angular" />
+        <span>веб программирование</span>
+      </div>
+      <div>
+        <img src="web/mongo-db.jpg" alt="mongo-db" />
+        <span>базы данных</span>
+      </div>
+    </section>
+    <section id="form-grid-section">
+      <div class="grid-form">
+        <h2>Contact</h2>
+        <div class="row100">
+          <div class="col">
+            <div class="inputBox">
+              <input type="text" name="first_name" required="required" />
+              <span class="text">Имя</span>
+              <span class="line"></span>
+            </div>
+          </div>
+          <div class="col">
+            <div class="inputBox">
+              <input type="text" name="last_name" required="required" />
+              <span class="text">Фамилия</span>
+              <span class="line"></span>
+            </div>
+          </div>
+        </div>
+        <div class="row100">
+          <div class="col">
+            <div class="inputBox">
+              <input type="text" name="email" required="required" />
+              <span class="text">Почта</span>
+              <span class="line"></span>
+            </div>
+          </div>
+          <div class="col">
+            <div class="inputBox">
+              <input type="text" name="phone" required="required" />
+              <span class="text">Телефон</span>
+              <span class="line"></span>
+            </div>
+          </div>
+        </div>
+        <div class="row100">
+          <div class="col">
+            <div class="inputBox textarea">
+              <textarea name="message" required="required"></textarea>
+              <span class="text">Напишите Ваше сообщение здесь</span>
+              <span class="line"></span>
+            </div>
+          </div>
+        </div>
+        <div class="row100">
+          <div class="col">
+            <input type="submit" value="Отправить" />
+          </div>
+        </div>
+      </div>
+    </section>
+    <footer>
+      <div class="container">
+        <div class="sec about-us">
+          <h2>About Us</h2>
+          <p>
+            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Cumque sed
+            modi cum corrupti dicta. Culpa nisi expedita blanditiis inventore
+            maiores facere ullam assumenda error quibusdam rerum necessitatibus,
+            sed quo laudantium.
+          </p>
+          <ul class="social-buttons">
+            <li>
+              <a href="#"><i class="fi fi-brands-facebook"></i></a>
+            </li>
+            <li>
+              <a href="#"><i class="fi fi-brands-twitter"></i></a>
+            </li>
+            <li>
+              <a href="#"><i class="fi fi-brands-instagram"></i></a>
+            </li>
+            <li>
+              <a href="#"><i class="fi fi-brands-youtube"></i></a>
+            </li>
+          </ul>
+        </div>
+        <div class="sec quick-links">
+          <h2>Quick Links</h2>
+          <ul>
+            <li><a href="#">About</a></li>
+            <li><a href="#">FAQ</a></li>
+            <li><a href="#">Privacy Policy</a></li>
+            <li><a href="#">Help</a></li>
+            <li><a href="#">Terms & Conditions</a></li>
+            <li><a href="#">Contacts</a></li>
+          </ul>
+        </div>
+        <div class="sec quick-links">
+          <h2>Shop</h2>
+          <ul>
+            <li><a href="#">Menu</a></li>
+            <li><a href="#">Women</a></li>
+            <li><a href="#">Children</a></li>
+            <li><a href="#">Shoes</a></li>
+            <li><a href="#">Clothing</a></li>
+            <li><a href="#">Accessories</a></li>
+          </ul>
+        </div>
+        <div class="sec contact">
+          <h2>Contact Us</h2>
+          <ul class="info">
+            <li>
+              <span><i class="fi fi-sr-marker"></i></span>
+              <span>
+                14 Tverskaya Street
+                <br />
+                Moscow, 117513,
+                <br />Russia</span
+              >
+            </li>
+            <li>
+              <span><i class="fi fi-sr-phone-call"></i></span>
+              <p>
+                <a href="tel:+79871234567">+7 987 123-45-67</a><br />
+                <a href="tel:+79871234567">+7 987 123-45-67</a><br />
+              </p>
+            </li>
+            <li>
+              <span><i class="fi fi-sr-envelope-open"></i></span>
+              <p>
+                <a href="mailto:example@mail.ru">example@mail.ru</a><br />
+              </p>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </footer>
+    <div class="copyrightText">
+      <p>Copyright © 2022 Student MIREA. All Rights Reserved</p>
+    </div>
+  </body>
+</html>
